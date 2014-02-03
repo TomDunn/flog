@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>flog</title>
+        <link rel="shortcut icon" href="{{url_for('static', filename='favicon.ico')}}">
+    </head>
+    <body>
+        {% block main_nav %}
+            <ul>
+                <li>
+                    <form method="post" action="/create">
+                        <input type="submit" value="create post" />
+                    </form>
+                </li>
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                <li>
+                    <a href="/list">List</a>
+                </li>
+            </ul>
+        {% endblock %}
+        {% block content %}
+            <p>Default page</p>
+        {% endblock %}
+    </body>
+</html>

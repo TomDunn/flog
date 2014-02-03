@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+    {% if not edit %}
+        <h2> {{ post.title }} </h2>
+        <div>
+            {{ post.body|markdown|safe }}
+        </div>
+        <div>
+            <a href="/edit/{{ post.slug }}">Edit</a>
+        </div>
+    {% else %}
+        <form method="post">
+            <input type="text" value="{{ post.title|safe }}" name="title" />
+            <textarea name="body">{{ post.body|safe }}</textarea>
+            <input type="submit" value="save" />
+        </form>
+    {% endif %}
+{% endblock %}
